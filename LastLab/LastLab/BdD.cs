@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LastLab
 {
-
-    public class BdD
+    public class Persona 
     {
-
-    }
-    public class Persona : BdD
-    {
-        string nombre, apellido, fechanac, biografia, rol; //rol es director, productor o actor
+        public string nombre, apellido, fechanac, biografia, rol; //rol es director, productor o actor
         
-        public Persona(string nombre, string apellido, string fechanac, string biografia, string rol):base()
+        public Persona(string nombre, string apellido, string fechanac, string biografia, string rol)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -25,24 +21,24 @@ namespace LastLab
         }
     }
 
-    public class Estudio : BdD
+    public class Estudio 
     {
-        string nombre, direc, fechanac;
+        public string nombre, direc, fechanac;
 
-        public Estudio(string nombre, string direc, string fechanac):base()
+        public Estudio(string nombre, string direc, string fechanac)
         {
             this.nombre = nombre;
             this.direc = direc;
             this.fechanac = fechanac;
         }
     }
-    public class Pelicula : BdD
+    public class Pelicula 
     {
-        string nombre, fechaestreno, descripcion, presupuesto;
-        Persona director;
-        Estudio estudio;
+        public string nombre, fechaestreno, descripcion, presupuesto;
+        public Persona director;
+        public Estudio estudio;
 
-        public Pelicula(string nombre, Persona director, Estudio estudio, string fechaestreno, string descripcion, string presupuesto): base()
+        public Pelicula(string nombre, Persona director, Estudio estudio, string fechaestreno, string descripcion, string presupuesto)
         {
             this.nombre = nombre;
             this.fechaestreno = fechaestreno;
@@ -52,23 +48,23 @@ namespace LastLab
             this.presupuesto = presupuesto;
         }
     }
-    public class PeliculaActor : BdD
+    public class PeliculaActor 
     {
-        Pelicula pelicula;
-        Persona actor;
+        public Pelicula pelicula;
+        public Persona actor;
 
-        public PeliculaActor(Pelicula pelicula, Persona actor) : base()
+        public PeliculaActor(Pelicula pelicula, Persona actor) 
         {
             this.pelicula = pelicula;
             this.actor = actor;
         }
     }
-    public class PeliculaProductor: BdD
+    public class PeliculaProductor
     {
-        Pelicula pelicula;
-        Persona productor;
+        public  Pelicula pelicula;
+        public Persona productor;
 
-        public PeliculaProductor(Pelicula pelicula, Persona productor):base()
+        public PeliculaProductor(Pelicula pelicula, Persona productor)
         {
             this.pelicula = pelicula;
             this.productor = productor;
